@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ysj.root.member.dao.MemberDAO">
+	
+	<resultMap type="com.ysj.root.member.dto.MemberDTO" id="Mmember">
+	<result property="id" column="id"/>
+	<result property="pw" column="pw"/>
+	<result property="addr" column="addr"/>
+	<result property="limitTime" column="limit_time"/>
+	<result property="sessionId" column="session_id"/>
+	
+	</resultMap>
+	
+	<insert id="UserSave">
+	insert into membership_in values(#{id},#{pw},#{addr},
+											#{sessionId}, #{limitTime})
+	</insert>
+	
+	
+	<select id="LoginUser" resultMap="Mmember">
+	select * from membership_in where id = #{id}
+	
+	</select>
+	
+	
+	
+	
+	
+</mapper>

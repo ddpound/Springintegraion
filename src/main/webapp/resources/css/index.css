@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px 0px 0px 0px;
+}
+
+.Bindex {
+	width: 1903px;
+	height: 700px;
+}
+
+.leftIndex {
+	margin: 0px 0px 0px 0px;
+	width: 10%;
+	height: 700px;
+	background-color: #181825;
+	float: left;
+}
+
+.leftIndex a {
+	color: #13E4E3;
+	text-decoration: none;
+}
+
+.boardCss {
+	width: 90%;
+	height: 700px;
+	float: left;
+	background-color: #D0D0D0;
+	align-content: center;
+	text-align: center;
+}
+
+.mini_board {
+	width: 300px;
+	height: 200px;
+	background-color: #181825;
+	text-align: center;
+}
+
+.mini_board a {
+	color: white;
+	text-decoration: none;
+}
+
+.minibar{
+	width: 300px;
+	margin-top: 160px;
+	height: 5%;
+	background-color: #13E4E3;
+	
+}
+
+.boardCss label {
+	color: white;
+}
