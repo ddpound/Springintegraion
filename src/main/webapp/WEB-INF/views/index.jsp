@@ -16,7 +16,7 @@
 			<li><label><a href="board"> 게시판</a> </label></li>
 		</ul>
 	</div>
-
+	
 	<div class="boardCss">
 		<div class="mini_board">
 			<a href="">게싯글 제목</a>
