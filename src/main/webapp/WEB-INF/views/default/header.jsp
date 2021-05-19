@@ -28,8 +28,9 @@
 		
 		</c:when>
 		<c:otherwise>
+		<li><label><a href="${pageContext.request.contextPath }/writeBoard"> 글쓰기</a> </label></li>
 		<li><label><a href="${pageContext.request.contextPath }/logout"> 로그아웃</a> </label></li>
-		<li><label> 로그인 된 아이디 : ${sessionId }</label></li>
+		<li><label>  로그인중 : ${sessionId }</label></li>
 		</c:otherwise>
 		</c:choose>
 		</ul>

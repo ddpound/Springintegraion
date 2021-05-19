@@ -16,7 +16,7 @@
 			<li><label><a href="boardWrite"> 글쓰기</a> </label></li>
 		</ul>
 	</div>
-
+	
 	<div class="boardCss">
 		<div class="mini_board">
 		
