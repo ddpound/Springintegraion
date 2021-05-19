@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>boardWrite</title>
 </head>
-<body>
+<body>글쓰기.jsp<br>
 
 </body>
 </html>

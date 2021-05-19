@@ -9,4 +9,10 @@ public class BoardController {
 	public String index() {
 		return "index";
 	}
+	
+	@RequestMapping("boardWrite")
+	public String boardWrite() {
+		
+		return "board/boardWrite";
+	}
 }
