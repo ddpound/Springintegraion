@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>writeBoard</title>
+<script
+	src="${pageContext.request.contextPath }/resources/js/board.js"></script>
 </head>
 
 <body>
