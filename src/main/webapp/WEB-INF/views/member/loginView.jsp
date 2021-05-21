@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <title>로그인</title>
 
-
-
 </head>
 <%@ include file="../default/header.jsp"%>
 <script src="${pageContext.request.contextPath }/resources/js/user.js"></script>

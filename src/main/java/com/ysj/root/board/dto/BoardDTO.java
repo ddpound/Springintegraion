@@ -2,16 +2,18 @@ package com.ysj.root.board.dto;
 
 import java.sql.Date;
 
-public class BaordDTO {
-	private String boardId;
+public class BoardDTO {
+	private int boardId;
 	private String title;
+	private String contents;
 	private Date writedate;
 	private int hit;
 	private String writeuser;
-	public String getBoardId() {
+	
+	public int getBoardId() {
 		return boardId;
 	}
-	public void setBoardId(String boardId) {
+	public void setBoardId(int boardId) {
 		this.boardId = boardId;
 	}
 	public String getTitle() {
@@ -19,6 +21,12 @@ public class BaordDTO {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 	public Date getWritedate() {
 		return writedate;

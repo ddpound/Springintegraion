@@ -30,6 +30,8 @@
 	<!-- 마이바티스 xml파일과 dao빈 연결 -->
 	<mybatis-spring:scan
 		base-package="com.ysj.root.member.dao" />
+	<mybatis-spring:scan
+		base-package="com.ysj.root.board.dao" />
 
 	<!-- 롤백기능을 담았다고 한다 ,트랜잭션 -->
 	<bean name="txMgr"

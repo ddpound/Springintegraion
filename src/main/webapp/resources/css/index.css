@@ -32,10 +32,14 @@ body {
 }
 
 .mini_board {
-	width: 300px;
+	margin-left : 5px;
+	margin-bottom : 5px;
+	float: left;
+	width: 20%;
 	height: 200px;
 	background-color: #181825;
 	text-align: center;
+	
 }
 
 .mini_board a {
@@ -44,7 +48,7 @@ body {
 }
 
 .minibar{
-	width: 300px;
+	width: 100%;
 	margin-top: 160px;
 	height: 5%;
 	background-color: #13E4E3;
@@ -54,3 +58,19 @@ body {
 .boardCss label {
 	color: white;
 }
+
+
+.listnum{
+	margin-top: 35%;
+	
+}
+
+.listnum ul li{
+	border : 2px #13E4E3 solid;
+	list-style-type: none;
+	float: left;
+	margin-left: 5px;
+	
+}
+
+
