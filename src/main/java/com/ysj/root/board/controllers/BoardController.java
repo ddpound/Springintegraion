@@ -5,6 +5,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -43,15 +44,41 @@ public class BoardController {
 		System.out.println(mapDto.get("title"));
 		System.out.println(mapDto.get("writeuser"));
 		
-		bs.saveBoard(mapDto);
-		return "{\"loginResult\" : true}";
+		int result = bs.saveBoard(mapDto);
+		System.out.println("result 결과값"+result);
+		if(result ==1) {
+			return "{\"saveResult\" : true}";
+		}else if(result == -1) {
+			return "{\"saveResult\" : \"noContents\"}";
+		}
+		
+		return "{\"saveResult\" : false}";
 	}
+	
 	@GetMapping("showboard")
 	public String showBoard(@RequestParam("boardid") int boardid, Model model) {
 		System.out.println(boardid);
+		//조회수 추가부분
+		
 		model.addAttribute("selectboard",bs.SelectBoard(boardid));
 		
 		return "board/selectBoardView";
 	}
+	
+	@DeleteMapping("deleteBoard")
+	@ResponseBody
+	public String deleteBoard(@RequestParam("boardId")int id ,Model model) {
+		System.out.println(id);
+		
+		if(bs.deleteBoard(id)) {
+			return "{\"result\" : true}";
+		}
+		return "{\"result\" : false}";
+		
+	}
+	
+	
+	
+	
 
 }

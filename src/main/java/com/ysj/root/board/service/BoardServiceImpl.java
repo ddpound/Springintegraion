@@ -33,15 +33,24 @@ public class BoardServiceImpl implements BoardService{
 	public int saveBoard(Map<String, Object> mapDto) {
 		BoardDTO dto = new BoardDTO();
 		
+		String title = (String)mapDto.get("title");
+		String contents =  (String)mapDto.get("contents");
+		
+		
+		// 널도아니고 그렇다고 값이 있는것도 아니고 그래서 "" <= 이렇게 빈값을 했음
+		if(title.equals("") ||contents.equals("")) {
+			return -1; //글이나 내용이 하나도 없다면 -1리턴
+		}
+		
 		dto.setWriteuser((String)mapDto.get("writeuser"));
 		dto.setContents((String)mapDto.get("contents"));
-		System.out.println(dto.getContents());
+		//System.out.println(dto.getContents());
 		dto.setTitle((String)mapDto.get("title"));
+		
 		dto.setHit(0);
 		long nowdate = System.currentTimeMillis();
 		dto.setWritedate(new Date(nowdate));
-		
-		mapper.saveBoard(dto);
+		mapper.saveBoard(dto); // 저장줄
 		return 1;
 	}
 	
@@ -82,16 +91,30 @@ public class BoardServiceImpl implements BoardService{
 		
 		return mapper.ShowBoardList(startBoardNum,endBoardNum);
 	}
-	
-	
 
 	@Override
 	public BoardDTO SelectBoard(int boardid) {
-		return mapper.SelectBoard(boardid);
+		BoardDTO dto = new BoardDTO();
+		dto = mapper.SelectBoard(boardid);
+		int intAddHit = dto.getHit()+1;
+		
+		dto.setHit(intAddHit);
+		
+		mapper.addHit(boardid,intAddHit);
+		
+		
+		return dto;
 	}
 
-	
-	
-	
+	@Override
+	public boolean deleteBoard(int boardid) {
+		int result = mapper.deleteBoard(boardid);
+		
+		if(result==1) {
+			return true;
+			// 올바르게 삭제한경우 1을 반환하도록 하자
+		}
+		return false;
+	}
 
 }
